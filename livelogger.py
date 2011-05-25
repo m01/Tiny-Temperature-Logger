@@ -27,6 +27,7 @@ spreadsheet_key = ''
 worksheet_id = 'od6'
 
 #serial port - can use glob wildcards (e.g. *) - change to suit your OS.
+#see http://mbed.org/handbook/SerialPC
 serial_port_search_str = '/dev/tty.usbmodem*'
 
 # --- configuration above this line ---
@@ -65,9 +66,8 @@ try:
     #find a serial port to use.
     print "Searching for serial port..."
 
-    #the next line searches for an appropriate serial port. see
-    #see http://mbed.org/handbook/SerialPC
-    ports = glob.glob(serial_port_search_str)	#change if not on OS X.
+    #the next line searches for an appropriate serial port.
+    ports = glob.glob(serial_port_search_str)
 
     port = ""	#the serial port to use.
     if(len(ports) <= 0):
