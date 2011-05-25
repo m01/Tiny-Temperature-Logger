@@ -1,0 +1,21 @@
+This project forms the Python "backend" to the following mbed project:
+http://mbed.org/users/mblokzijl/programs/TMP102_Serial_Logger/lrqmmi
+
+This allows you to publish the current temperature readings to a Google Docs spreadsheet, which can be used for live data visualisation. 
+
+You'll need the following:
+- Access to Google Docs
+- an mbed + TMP102 temperature sensor (though I'm sure you can make this work with the microprocessor of your choice as well (Arduino e.g.))
+
+Here's an example of what the results can look like: http://playground.m01.eu/live-temperature
+
+The livelogger.py script will also save local logfiles (e.g. temp_DD.MM.YYYY.log). The plotter.gnuplot script can be used to visualise these using gnuplot (http://www.gnuplot.info)
+
+Quick Start guide:
+1. Create a google spreadsheet. Call column A 'Time', and column B 'Temperature' (just insert those into the first row). You can optionally add a third column called 'Comment' or similar, which can be used by some visualisations such as the timeline.
+2. Use the spreadsheetFinder.py script to get the spreadsheet key and the worksheet id of your new spreadsheet.
+3. Insert the values you got into the livelogger.py's configuration section.
+4. Upload the code from http://mbed.org/users/mblokzijl/programs/TMP102_Serial_Logger/lrqmmi to your mbed, and hook up your TMP102 temperature sensor. Make sure your mbed is connected to your computer.
+5. Run the livelogger.py script and watch your spreadsheet!
+
+You can now add a graph to your spreadsheet and publish that, or embed a "gadget" onto your website, or just keep the data to yourself.
